@@ -7,6 +7,8 @@ import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { EmployeeModule } from './employee/employee.module';
+import { DepartmentModule } from './department/department.module';
+import { DesignationModule } from './designation/designation.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { EmployeeModule } from './employee/employee.module';
     UsersModule,
     AuthModule,
     EmployeeModule,
+    DepartmentModule,
+    DesignationModule,
   ],
   controllers: [AppController],
   providers: [AppService, Logger],
