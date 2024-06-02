@@ -819,7 +819,7 @@
   resolved "https://registry.npmjs.org/@nestjs/passport/-/passport-10.0.0.tgz"
   integrity sha512-IlKKc6M7JOe+4dBbW6gZsXBSD05ZYgwfGf3GJhgCmUGYVqffpDdALQSS6JftnExrE+12rACoEmHkzYwKAGVK0Q==
 
-"@nestjs/platform-express@^10.0.0":
+"@nestjs/platform-express@^10.0.0", "@nestjs/platform-express@^10.3.8":
   version "10.3.8"
   resolved "https://registry.npmjs.org/@nestjs/platform-express/-/platform-express-10.3.8.tgz"
   integrity sha512-sifLoxgEJvAgbim1UuW6wyScMfkS9SVQRH+lN33N/9ZvZSjO6NSDLOe+wxqsnZkia+QrjFC0qy0ITRAsggfqbg==

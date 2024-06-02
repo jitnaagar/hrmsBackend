@@ -1,11 +1,17 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe, Logger } from '@nestjs/common';
+import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const logger = new Logger(); 
+  const corsOptions: CorsOptions = {
+    origin: '*', // Allow all origins
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Accept',
+  };
   const app = await NestFactory.create(AppModule, { cors: true });
-  app.enableCors();
+  app.enableCors(corsOptions);
   app.useGlobalPipes(new ValidationPipe());
   const port = 3000;
   await app.listen(port);
