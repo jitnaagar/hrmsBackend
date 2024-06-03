@@ -6,7 +6,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const logger = new Logger(); 
   const corsOptions: CorsOptions = {
-    origin: '*', // Allow all origins
+    origin: 'https://hrms24.vercel.app/auth/auth1/login', // Allow all origins
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Accept',
   };
