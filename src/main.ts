@@ -6,7 +6,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const logger = new Logger(); 
   const corsOptions: CorsOptions = {
-    origin: 'https://hrms24.vercel.app', // Replace with your frontend domain
+    origin: 'https://www.hrms24.com', // Replace with your frontend domain
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Accept',
     credentials: true, // If you need to allow cookies
