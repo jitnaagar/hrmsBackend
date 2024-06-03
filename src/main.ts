@@ -9,7 +9,7 @@ async function bootstrap() {
   const corsOptions: CorsOptions = {
     origin: 'https://www.hrms24.com', // Replace with your frontend domain
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: 'Content-Type, Accept',
+    allowedHeaders: 'Content-Type, application/json',
     credentials: true, // If you need to allow cookies
   };
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
