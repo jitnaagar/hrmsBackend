@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe, Logger } from '@nestjs/common';
 import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -11,7 +12,8 @@ async function bootstrap() {
     allowedHeaders: 'Content-Type, Accept',
     credentials: true, // If you need to allow cookies
   };
-  const app = await NestFactory.create(AppModule, { cors: true });
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  // const app = await NestFactory.create(AppModule, { cors: true });
   app.enableCors(corsOptions);
   app.useGlobalPipes(new ValidationPipe());
   const port = 3001;
