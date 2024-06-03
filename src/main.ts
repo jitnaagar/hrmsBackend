@@ -6,9 +6,10 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const logger = new Logger(); 
   const corsOptions: CorsOptions = {
-    origin: '*', // Allow all origins
+    origin: 'https://hrms24.vercel.app', // Replace with your frontend domain
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Accept',
+    credentials: true, // If you need to allow cookies
   };
   const app = await NestFactory.create(AppModule, { cors: true });
   app.enableCors(corsOptions);
