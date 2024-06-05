@@ -7,12 +7,14 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const logger = new Logger(); 
   const corsOptions: CorsOptions = {
-    origin: 'https://www.hrms24.com', // Replace with your frontend domain
+    origin: ['http://localhost:3000', 'https://www.hrms24.com'],
+    allowedHeaders: ['Accept', 'Content-Type'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: 'Content-Type, application/json',
-    credentials: true, // If you need to allow cookies
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true,
   };
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, { cors: true });
   // const app = await NestFactory.create(AppModule, { cors: true });
   app.enableCors(corsOptions);
   app.useGlobalPipes(new ValidationPipe());
