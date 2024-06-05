@@ -15,19 +15,7 @@ async function bootstrap() {
     credentials: true,
   };
   const app = await NestFactory.create<NestExpressApplication>(AppModule, { cors: true });
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
-    next();
-  });
-
-  app.enableCors({
-    allowedHeaders: '*',
-    origin: '*',
-  });
-  // const app = await NestFactory.create(AppModule, { cors: true });
-  // app.enableCors(corsOptions);
+  app.enableCors(corsOptions);
   app.useGlobalPipes(new ValidationPipe());
   const port = 3001;
   await app.listen(port);
